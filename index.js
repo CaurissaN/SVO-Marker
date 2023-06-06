@@ -34,12 +34,17 @@ function init() {
         } else {
             shape = new Square()
         }
-        shape.setColor(res.shapeColor)
+        shape.setColor(res.shapeColor.toLowerCase())
 
         const svg = new SVG()
-        svg.setText(res.text, res.textColor)
+        svg.setText(res.text, res.textColor.toLowerCase())
         svg.setShape(shape)
-        console.log(svg)
+        return writeFile("./examples/logo.svg", svg.render())
+    }).then(() => {
+        console.log("logo.svg created succesfully in examples folder!")
+    })
+    .catch((error) => {
+        console.log(error)
     })
 }
 
