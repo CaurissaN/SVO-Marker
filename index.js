@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const { writeFile } = require("fs/promises");
-const { Shape, SVG, Circle, Triangle, Square } = require("./lib/shapes");
+const { SVG, Circle, Triangle, Square } = require("./lib/shapes");
 
 function init() {
     inquirer.prompt([
